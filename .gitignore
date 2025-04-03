@@ -1,7 +1,13 @@
-# Prerequisites
-*.d
+# ================================================================================================ #
+# Generated Output
 
-# Compiled Object files
+# Directories
+out/
+
+# ================================================================================================ #
+# Compilation and Building
+
+# Compiled Object Files
 *.slo
 *.lo
 *.o
@@ -16,10 +22,6 @@
 *.dylib
 *.dll
 
-# Fortran module files
-*.mod
-*.smod
-
 # Compiled Static libraries
 *.lai
 *.la
@@ -30,3 +32,8 @@
 *.exe
 *.out
 *.app
+
+# Build Directories
+build/
+
+# ================================================================================================ #
