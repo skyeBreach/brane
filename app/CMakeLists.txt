@@ -12,11 +12,9 @@ set_property(TARGET brane_executable PROPERTY OUTPUT_NAME "brane")
 # ================================================================================================ #
 # Install Rules
 
-# TODO: Comment
-#
+# Install the executable(s) to the bin directory
 install(TARGETS brane_executable
-    DESTINATION ${BRANE_INSTALL_RELEASE_BINDIR}
+    DESTINATION bin
 )
 
-# ================================================================================================ #
-
+# ================================================================================================ # w

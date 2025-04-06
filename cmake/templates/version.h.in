@@ -17,7 +17,7 @@ namespace @META_PROJECT_ID_LOWER@ {
 
     constexpr std::string_view VERSION = "@META_VERSION@";
     constexpr std::string_view NAME_VERSION = "@META_NAME_VERSION@";
-} // Namespace @META_PROJECT_ID_LOWER@
+} // namespace @META_PROJECT_ID_LOWER@
 
 #endif // BRANE_VERSION_H
 
