@@ -83,33 +83,30 @@ info: && project-info system-info
 # Generates the config data for CMake
 [group("config")]
 config:
-    cmake -S . -B {{dir_build}} --install-prefix {{dir_install}} -G "Ninja Multi-Config"
+    cmake -S . -B {{dir_build}} -G "Ninja Multi-Config"
 
-# TODO: Doc Comment
-#
+# Cleans and then reconfigures the cmake project
 [group("config")]
 reconfig: clean config
 
 # ================================================================================================ #
 # Building and Compilation
 
-# Build the CMake-generated project binary tree
+# Build the CMake-generated project binary tree, and creates a local install folder
 [group("build")]
 build:
     cmake --build {{dir_build}} --config Debug --target all
     cmake --install {{dir_build}} --config Debug
 
-# TODO: Doc Comment
-#
+# Cleans, creates a cmake project config, and then builds the project
 [group("build")]
 rebuild: clean config build
 
 # ================================================================================================ #
-# Project Executables
+# Development Utilities
 
-# TODO: Doc Comment
-#
-[group("executables")]
+# Helper recipe to call the in-dev app executable binary
+[group("development")]
 @brane +args='':
     {{dir_install}}/bin/brane {{args}}
 
