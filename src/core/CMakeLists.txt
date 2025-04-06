@@ -36,6 +36,13 @@ set_target_properties(Core
 # Set the C++ standard to use for this project
 target_compile_features(Core PUBLIC cxx_std_17)
 
+
+configure_file(
+    ${PROJECT_SOURCE_DIR}/cmake/templates/version.h.in
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/version.h
+    @ONLY
+)
+
 # ================================================================================================ #
 # Generate Utility and Helper Files
 

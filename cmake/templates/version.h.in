@@ -1,6 +1,23 @@
 #ifndef BRANE_VERSION_H
 #define BRANE_VERSION_H
 
+namespace @META_PROJECT_ID_LOWER@ {
+    constexpr std::string_view PROJECT_NAME = "@META_PROJECT_NAME@";
+    constexpr std::string_view PROJECT_DESCRIPTION = "@META_PROJECT_DESCRIPTION@";
+    constexpr std::string_view PROJECT_REPO = "@META_GITHUB_REPO@";
+
+    constexpr std::string_view AUTHOR_ORGANIZATION = "@META_AUTHOR_ORGANIZATION@";
+    constexpr std::string_view AUTHOR_DOMAIN = "@META_AUTHOR_DOMAIN@";
+    constexpr std::string_view AUTHOR_MAINTAINER = "@META_AUTHOR_MAINTAINER@";
+    constexpr std::string_view AUTHOR_EMAIL = "@META_AUTHOR_EMAIL@";
+
+    constexpr unsigned short int VERSION_MAJOR = @META_VERSION_MAJOR@;
+    constexpr unsigned short int VERSION_MINOR = @META_VERSION_MINOR@;
+    constexpr unsigned short int VERSION_PATCH = @META_VERSION_PATCH@;
+
+    constexpr std::string_view VERSION = "@META_VERSION@";
+    constexpr std::string_view NAME_VERSION = "@META_NAME_VERSION@";
+} // Namespace @META_PROJECT_ID_LOWER@
 
 #endif // BRANE_VERSION_H
 
