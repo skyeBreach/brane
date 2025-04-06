@@ -95,16 +95,22 @@ include(ProjectOptions)
 # Import all project dependencies
 include(Dependencies)
 
-# ================================================================================================ #
-# Project Install Rules
-
-include(InstallRules)
+# TODO: Comment
+#
+include(InstallConfig)
 
 # ================================================================================================ #
 # Project Source Code SubModules
 
 add_subdirectory(src)
 add_subdirectory(app)
+
+# ================================================================================================ #
+# Project Install Rules
+
+# TODO: Comment
+#
+include(InstallRules)
 
 # ================================================================================================ #
 
