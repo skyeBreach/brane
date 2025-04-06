@@ -10,13 +10,19 @@ if(CMAKE_SKIP_INSTALL_RULES)
 endif()
 
 # ================================================================================================ #
-#
+# Source Code Rules
 
-# TODO: Will also need an app sourc
-
+# Install the src files if we are including them
 if(BRANE_INSTALL_SOURCE)
     install(DIRECTORY ${PROJECT_SOURCE_DIR}/src/
-        DESTINATION ${BRANE_INSTALL}/src
+        DESTINATION src
+    )
+endif()
+
+# Install the app/bin files if we are including them
+if(BRANE_INSTALL_APP)
+    install(DIRECTORY ${PROJECT_SOURCE_DIR}/app/
+        DESTINATION app
     )
 endif()
 

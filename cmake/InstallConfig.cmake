@@ -13,38 +13,20 @@ include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
 
 # ================================================================================================ #
-# Install Directories
+# Common Path Variables
 
-# TODO: Comment
-#
-if(BRANE_DEVELOPER_MODE)
-    set(BRANE_INSTALL
+# Set install path for both dev mode (absolute) and non dev (relative to prefix)
+if(BRANE_DEVELOPER_MODE AND CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+    set(CMAKE_INSTALL_PREFIX
         "${PROJECT_SOURCE_DIR}/install"
-        CACHE STRING ""
+        CACHE STRING "" FORCE
     )
 else()
-    set(BRANE_INSTALL
-        "brane"
-        CACHE STRING ""
+    set(CMAKE_INSTALL_PREFIX
+        "${CMAKE_INSTALL_PREFIX}/brane"
+        CACHE STRING "" FORCE
     )
 endif()
-set_property(CACHE BRANE_INSTALL PROPERTY TYPE PATH)
-
-# TODO: COMMENT
-#
-set(BRANE_INSTALL_LIBDIR
-    "${BRANE_INSTALL}/lib"
-    CACHE STRING ""
-)
-set_property(CACHE BRANE_INSTALL_LIBDIR PROPERTY TYPE PATH)
-
-# TODO: COMMENT
-#
-set(BRANE_INSTALL_BINDIR
-    "${BRANE_INSTALL}/bin"
-    CACHE STRING ""
-)
-set_property(CACHE BRANE_INSTALL_BINDIR PROPERTY TYPE PATH)
 
 # ================================================================================================ #
 

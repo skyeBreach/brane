@@ -53,8 +53,20 @@ if(NOT PROJECT_IS_TOP_LEVEL)
     mark_as_advanced(BRANE_DEVELOPER_MODE)
 endif()
 
+# ================================================================================================ #
+# Install Rules Options
+
+# When enabled all files located in src (global and submodule scoped) will be exported/installed
+# to the install directory under the src directory
 option(BRANE_INSTALL_SOURCE
     "Install all source code modules to the 'src' directory"
+    ON
+)
+
+# When enabled all files located in app (global and submodule scoped) will be exported/installed
+# to the install directory under the app directory
+option(BRANE_INSTALL_APP
+    "Install all source code files for the executable binary modules in app/"
     ON
 )
 
