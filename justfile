@@ -42,7 +42,7 @@ help:
 _default: help
     echo "Name: "  ${name}
 
-# Output the projects version (SemVer) number
+# Output the projects version (SemVer) numberc
 @version:
     echo "{{project_version}}"
 
@@ -83,7 +83,7 @@ info: && project-info system-info
 # Generates the config data for CMake
 [group("config")]
 config:
-    cmake -S . -B {{dir_build}} -G "Ninja Multi-Config"
+    cmake -S . -B {{dir_build}} --install-prefix {{dir_install}} -G "Ninja Multi-Config"
 
 # TODO: Doc Comment
 #
@@ -97,6 +97,7 @@ reconfig: clean config
 [group("build")]
 build:
     cmake --build {{dir_build}} --config Debug --target all
+    cmake --install {{dir_build}} --config Debug
 
 # TODO: Doc Comment
 #
@@ -104,17 +105,13 @@ build:
 rebuild: clean config build
 
 # ================================================================================================ #
-# Installation
+# Project Executables
 
 # TODO: Doc Comment
 #
-[group("install")]
-install:
-    cmake --install {{dir_build}} --prefix {{dir_install}} --config Debug
-
-# Cleans project, then installs (after configuring and building)
-[group("install")]
-reinstall: clean config build install
+[group("executables")]
+@brane +args='':
+    {{dir_install}}/bin/brane {{args}}
 
 # ================================================================================================ #
 
