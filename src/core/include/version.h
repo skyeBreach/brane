@@ -17,7 +17,7 @@ namespace brane {
 
     constexpr std::string_view VERSION = "0.1.0";
     constexpr std::string_view NAME_VERSION = "Brane v0.1.0";
-} // Namespace brane
+} // namespace brane
 
 #endif // BRANE_VERSION_H
 
